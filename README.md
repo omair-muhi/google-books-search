@@ -13,9 +13,9 @@ This is a full-stack web application that allows searching, viewing and saving b
 ## Usage 
 * To install: 
 * To run: 
-* Access at: https://floating-shelf-15662.herokuapp.com
+* Access at: 
 * Screenshot:
-![!](images/landing-page.png)
+
 
 ## Tests
 1.
