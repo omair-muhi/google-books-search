@@ -1,33 +1,29 @@
-# Google Books Search
+# Create React Express App
 
-## Description 
-This is a full-stack web application that allows searching, viewing and saving books retrieved using the Google Books API. It uses a MERN stack.
+## About This Boilerplate
 
-## Table of Contents (Optional)
+This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
 
-* [Usage](#usage)
-* [Tests](#tests)
-* [Credits](#credits)
-* [License](#license)
+The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-## Usage 
-* To install: 
-* To run: 
-* Access at: https://floating-shelf-15662.herokuapp.com
-* Screenshot:
-![!](images/landing-page.png)
+## Starting the app locally
 
-## Tests
-1.
-2.
-3.
+Start by installing front and backend dependencies. While in this directory, run the following command:
 
-## Credits
-* UoT FSF Bcamp - this template
+```
+npm install
+```
 
-## License
+This should install node modules within the server and the client folder.
 
-MIT License
+After both installations complete, run the following command in your terminal:
 
----
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+```
+npm start
+```
+
+Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+
+## Deployment (Heroku)
+
+To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
