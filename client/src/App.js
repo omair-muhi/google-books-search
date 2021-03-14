@@ -3,8 +3,7 @@ import React from "react";
 import Header from './components/Header';
 import Search from './pages/Search';
 import Saved from './pages/Saved';
-
-import "./App.css";
+// import "./App.css";
 import {
   BrowserRouter as Router,
   Switch,
