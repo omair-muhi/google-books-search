@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-
+import React from "react";
+import BookContainer from "../components/BookContainer";
 function Search() {
 
     return (
-        <h1>Search for books</h1>
+        <BookContainer />
     );
 }
 
