@@ -20,15 +20,7 @@ class BookContainer extends Component {
 
     searchBooks = query => {
         API.search(query)
-            .then((res) => {
-                res.data.items.map((book) => {
-                    // for debugging purposes
-                    console.log("Title:", book.volumeInfo.title);
-                    console.log("Authors: ", book.volumeInfo.authors[0]);
-                    console.log("Description: ", book.volumeInfo.description);
-                });
-                this.setState({ result: res.data })
-            })
+            .then(res => this.setState({ result: res.data.items[0].volumeInfo }))
             .catch(err => console.log(err));
     };
 
@@ -47,25 +39,22 @@ class BookContainer extends Component {
     };
 
     render() {
+        // console.log("RESULT:", this.state.result);
+        // console.log(this.state.result.title);
         return (
             <Container>
                 <Row>
-                    <SearchForm
-                        value={this.state.search}
-                        handleInputChange={this.handleInputChange}
-                        handleFormSubmit={this.handleFormSubmit}
-                    />
-                    {/* <Col size="md-8">
+                    <Col size="md-8">
                         <Card
-                            heading={this.state.result.Title || "Search for a Movie to Begin"}
+                            heading={this.state.result.title || "Search for a Book to Begin"}
                         >
-                            {this.state.result.Title ? (
-                                <MovieDetail
-                                    title={this.state.result.Title}
-                                    src={this.state.result.Poster}
-                                    director={this.state.result.Director}
-                                    genre={this.state.result.Genre}
-                                    released={this.state.result.Released}
+                            {this.state.result.title ? (
+                                <BookDetail
+                                    title={this.state.result.title}
+                                    author={this.state.result.authors[0]}
+                                    description={this.state.result.description}
+                                    thumbnail={this.state.result.imageLinks.thumbnail}
+                                    link={this.state.result.infoLink}
                                 />
                             ) : (
                                 <h3>No Results to Display</h3>
@@ -80,7 +69,7 @@ class BookContainer extends Component {
                                 handleFormSubmit={this.handleFormSubmit}
                             />
                         </Card>
-                    </Col> */}
+                    </Col>
                 </Row>
             </Container>
         );
