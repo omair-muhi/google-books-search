@@ -5,7 +5,7 @@ import {
 
 function Header() {
     return (
-        <header>
+        <header className="mb-3">
             <nav className="navbar navbar-expand-sm bg-dark justify-content-left">
                 <Link to="/search" className="nav-link text-white">Search</Link>
                 <Link to="/saved" className="nav-link text-white">Saved</Link>

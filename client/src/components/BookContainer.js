@@ -15,7 +15,7 @@ class BookContainer extends Component {
 
     // When this component mounts, search for the book "Harry Potter"
     componentDidMount() {
-        this.searchBooks("Harry Potter");
+        this.searchBooks("The Mind Body Prescription");
     }
 
     searchBooks = query => {
