@@ -55,6 +55,7 @@ class BookContainer extends Component {
                             <Card
                                 heading={item.volumeInfo.title || "Search for a Book to Begin"}
                                 key={item.id}
+                                link={item.volumeInfo.infoLink}
                             >
                                 {item.volumeInfo.title ? (
                                     <BookDetail
