@@ -4,7 +4,7 @@ function ViewButton(props) {
     const heading = props.heading;
     if (heading !== "Search") {
         return (
-            <a href={props.link} className="btn btn-primary mr-3" target="_blank" rel="noopener noreferrer">View Book</a>
+            <a href={props.link} className="btn btn-primary ml-3" target="_blank" rel="noopener noreferrer">Save Book</a>
         )
     } else {
         return (
