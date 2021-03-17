@@ -19,6 +19,6 @@ export default {
         return axios.post("/api/books", bookData);
     },
     search: function(query) {
-        return axios.get(BASEURL + query + "&maxResults=3");
+        return axios.get(BASEURL + query + "&maxResults=5");
     }
 };
