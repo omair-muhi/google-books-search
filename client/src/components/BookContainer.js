@@ -9,7 +9,7 @@ import API from "../utils/API";
 
 class BookContainer extends Component {
     state = {
-        result: {},
+        result: [],
         search: ""
     };
 
@@ -20,7 +20,15 @@ class BookContainer extends Component {
 
     searchBooks = query => {
         API.search(query)
-            .then(res => this.setState({ result: res.data.items[0].volumeInfo }))
+            .then(res => {
+                this.setState(state => {
+                    const result = [...res.data.items];
+                    return {
+                        result,
+                        search: "",
+                    };
+                })
+            })
             .catch(err => console.log(err));
     };
 
@@ -39,27 +47,28 @@ class BookContainer extends Component {
     };
 
     render() {
-        // console.log("RESULT:", this.state.result);
-        // console.log(this.state.result.title);
         return (
             <Container>
                 <Row>
                     <Col size="md-8">
-                        <Card
-                            heading={this.state.result.title || "Search for a Book to Begin"}
-                        >
-                            {this.state.result.title ? (
-                                <BookDetail
-                                    title={this.state.result.title}
-                                    author={this.state.result.authors[0]}
-                                    description={this.state.result.description}
-                                    thumbnail={this.state.result.imageLinks.thumbnail}
-                                    link={this.state.result.infoLink}
-                                />
-                            ) : (
-                                <h3>No Results to Display</h3>
-                            )}
-                        </Card>
+                        {this.state.result.map(item =>
+                            <Card
+                                heading={item.volumeInfo.title || "Search for a Book to Begin"}
+                                key={item.id}
+                            >
+                                {item.volumeInfo.title ? (
+                                    <BookDetail
+                                        title={item.volumeInfo.title}
+                                        author={item.volumeInfo.authors[0]}
+                                        description={item.volumeInfo.description}
+                                        thumbnail={item.volumeInfo.imageLinks.thumbnail}
+                                        link={item.volumeInfo.infoLink}
+                                    />
+                                ) : (
+                                    <h3>No Results to Display</h3>
+                                )}
+                            </Card>
+                        )}
                     </Col>
                     <Col size="md-4">
                         <Card heading="Search">
