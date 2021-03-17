@@ -8,7 +8,7 @@ function ViewButton(props) {
         )
     } else {
         return (
-            <a href={props.link} className="btn btn-primary invisible" target="_blank" rel="noopener noreferrer">View Book</a>
+            <span></span>
         );
     }
 }
