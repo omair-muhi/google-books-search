@@ -52,6 +52,7 @@ class BookContainer extends Component {
         const bookItem = this.state.result.filter(item => item.id === id);
         console.log("Test object", bookItem);
         API.saveBook({
+            _id: id,
             title: bookItem[0].volumeInfo.title,
             authors: bookItem[0].volumeInfo.authors[0],
             description: bookItem[0].volumeInfo.description,
