@@ -4,7 +4,7 @@ function ViewButton(props) {
     const heading = props.heading;
     if (heading !== "Search") {
         return (
-            <a href={props.link} className="btn btn-primary ml-3" target="_blank" rel="noopener noreferrer">Save Book</a>
+            <button type="button" className="btn btn-primary ml-3" onClick={(e) => props.saveBookHandler(props.id, e)}>Save Book</button>
         )
     } else {
         return (

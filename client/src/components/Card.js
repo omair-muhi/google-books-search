@@ -11,7 +11,7 @@ function Card(props) {
             <div className="card-body">
                 {props.children}
                 <ViewButton heading={props.heading} link={props.link} />
-                <SaveButton heading={props.heading} link={props.link} />
+                <SaveButton heading={props.heading} saveBookHandler={props.saveBookHandler} id={props.id} />
             </div>
         </div>
     );
