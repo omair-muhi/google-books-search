@@ -24,8 +24,9 @@ This is a full-stack web application that allows searching, viewing and saving b
 
 ## Credits
 * UoT FSF Bcamp - this template
-* Code sourced an/or adapted from Week 21 - Activity #5
 * Code sourced an/or adapted from Week 19 - Activity #20
+* Code sourced an/or adapted from Week 21 - Activity #4
+* Code sourced an/or adapted from Week 21 - Activity #5
 ## License
 
 MIT License
