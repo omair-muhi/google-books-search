@@ -45,7 +45,22 @@ class BookContainer extends Component {
         event.preventDefault();
         this.searchBooks(this.state.search);
     };
-
+    // When save button is clicked, create new MongoDB document
+    handleSaveBooks = (id, event) => {
+        event.preventDefault();
+        console.log("Save Book Handler called!", id);
+        const bookItem = this.state.result.filter(item => item.id === id);
+        console.log("Test object", bookItem);
+        API.saveBook({
+            title: bookItem[0].volumeInfo.title,
+            authors: bookItem[0].volumeInfo.authors[0],
+            description: bookItem[0].volumeInfo.description,
+            image: bookItem[0].volumeInfo.imageLinks.thumbnail,
+            link: bookItem[0].volumeInfo.infoLink
+        })
+            .then(res => res.json)
+            .catch(err => console.log(err));
+    };
     render() {
         return (
             <Container>
@@ -55,7 +70,9 @@ class BookContainer extends Component {
                             <Card
                                 heading={item.volumeInfo.title || "Search for a Book to Begin"}
                                 key={item.id}
+                                id={item.id}
                                 link={item.volumeInfo.infoLink}
+                                saveBookHandler={this.handleSaveBooks}
                             >
                                 {item.volumeInfo.title ? (
                                     <BookDetail
