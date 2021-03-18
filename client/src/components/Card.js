@@ -1,6 +1,6 @@
 import React from "react";
 import ViewButton from "./ViewButton";
-import SaveButton from "./SaveButton";
+import ActionButton from "./ActionButton";
 
 function Card(props) {
     return (
@@ -11,7 +11,7 @@ function Card(props) {
             <div className="card-body">
                 {props.children}
                 <ViewButton heading={props.heading} link={props.link} />
-                <SaveButton heading={props.heading} saveBookHandler={props.saveBookHandler} id={props.id} />
+                <ActionButton heading={props.heading} saveBookHandler={props.saveBookHandler} deleteBookHandler={props.deleteBookHandler} id={props.id} />
             </div>
         </div>
     );
