@@ -6,21 +6,12 @@ This is a full-stack web application that allows searching, viewing and saving b
 ## Table of Contents (Optional)
 
 * [Usage](#usage)
-* [Tests](#tests)
 * [Credits](#credits)
 * [License](#license)
 
 ## Usage 
-* To install: 
-* To run: 
 * Access at: 
 * Screenshot:
-
-
-## Tests
-1.
-2.
-3.
 
 ## Credits
 * UoT FSF Bcamp - this template

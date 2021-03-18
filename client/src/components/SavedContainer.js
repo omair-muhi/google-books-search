@@ -45,23 +45,19 @@ class SavedContainer extends Component {
                     <Col size="md-8">
                         {this.state.savedBooks.map(book =>
                             <Card
-                                heading={book.title || "No saved books"}
+                                heading={book.title}
                                 key={book._id}
                                 id={book._id}
                                 link={book.link}
                                 deleteBookHandler={this.handleDeleteBooks}
                             >
-                                {book.title ? (
-                                    <BookDetail
-                                        title={book.title}
-                                        author={book.authors}
-                                        description={book.description}
-                                        thumbnail={book.image}
-                                        link={book.link}
-                                    />
-                                ) : (
-                                    <h3>No Results to Display</h3>
-                                )}
+                                <BookDetail
+                                    title={book.title}
+                                    author={book.authors}
+                                    description={book.description}
+                                    thumbnail={book.image}
+                                    link={book.link}
+                                />
                             </Card>
                         )}
                     </Col>
