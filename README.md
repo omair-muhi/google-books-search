@@ -10,8 +10,9 @@ This is a full-stack web application that allows searching, viewing and saving b
 * [License](#license)
 
 ## Usage 
-* Access at: 
-* Screenshot:
+* Access at: https://warm-meadow-63543.herokuapp.com/
+* Screenshot: 
+![Google Books main screen!](google-books-landing-page.png)
 
 ## Credits
 * UoT FSF Bcamp - this template
